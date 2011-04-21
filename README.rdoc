@@ -1,0 +1,22 @@
+= Ruby LLVM DSL
+
+Author:: Ronaldo M. Ferraz
+Copyright:: Copyright (c) 2011 Ronaldo M. Ferraz
+License:: BSD 3-clause (see LICENSE)
+
+This package contains a DSL for use with Jeremy Voorhis' Ruby bindings 
+to the LLVM API. It makes it easier to create LLVM modules and functions
+by providing a simple interface to the bindings. It can be safely used
+in conjunction with all the methods provided in the original library.
+
+ruby-llvm-dsl has been tested on the following Ruby interpreters:
+
+* MRI 1.8.7
+* MRI 1.9.2
+
+== Requirements
+* All requirements from ruby-llvm apply
+
+== About version numbers
+
+The version scheme follows ruby-llvm's.
