@@ -19,7 +19,7 @@ def spec
     s.version = '2.9.0'
     s.summary = "LLVM bindings for Ruby"
     
-    s.add_dependency('ruby-llvm', '= 2.9.0')
+    s.add_dependency('ruby-llvm', '>= 2.9.0')
     s.files = Dir['lib/**/*rb']
     s.require_path = 'lib'
     
