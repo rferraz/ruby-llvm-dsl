@@ -11,6 +11,10 @@ module GlobalBuilderWrapper
     default_module.globals.named(name.to_s)
   end
 
+  def write_bitcode(path_or_io)
+    default_module.write_bitcode(path_or_io)
+  end
+  
   def constant(value, options = {})
     if value.is_a?(String)
       LLVM::ConstantArray.string(value, options[:null_terminated].nil? ? true : options[:null_terminated])

@@ -88,14 +88,14 @@ module BuilderWrapper
   end
   
   def switch(value, default, *branches)
-    switch = builder.switch(value, get_block(current_function, default), branches.size)
+    switch = builder.switch(value, get_block(current_function, default), {})
     branches.each do |branch|
       switch.add_case(branch[:on], get_block(current_function, branch[:go_to]))
     end
   end
 
   def phi(type, *incomings)
-    phi = builder.phi(type_by_name(type))
+    phi = builder.phi(type_by_name(type), {})
     add_incoming(phi, *incomings)
     phi
   end
@@ -107,7 +107,7 @@ module BuilderWrapper
   
   def add_incoming(phi, *incomings)
     incomings.each do |incoming|
-      phi.add_incoming incoming[:on], get_block(current_function, incoming[:return_from])
+      phi.add_incoming(get_block(current_function, incoming[:return_from]) => incoming[:on])
     end
   end
 

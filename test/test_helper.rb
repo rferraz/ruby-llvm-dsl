@@ -12,7 +12,6 @@ require "tmpdir"
 # Extra requires
 require "llvm/execution_engine"
 require "llvm/transforms/scalar"
-require "llvm/bitcode"
 
 require "llvm-dsl"
 
